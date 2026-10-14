@@ -28,13 +28,13 @@ Não incluir Programação, WhatsApp, e-mail ou telefone sem dados.
 ## Copy integral
 Header CTA: Ouvir agora.
 Hero eyebrow: NO AR • 24 HORAS POR DIA
-H1: A Rádio da sua Vida.
+H1: A Rádio da sua Vida
 Hero apoio: Reviva a atmosfera da Jovem Guarda em uma experiência que atravessa gerações. Uma rádio feita para acompanhar seus melhores momentos, onde você estiver.
 Hero CTA principal: Ouvir agora
 Hero CTA secundário: Conheça a rádio
 Frase decorativa: Do Brasil para o Mundo.
 Player eyebrow: TRANSMISSÃO AO VIVO
-Player H2: Dê o play. A viagem começa.
+Player H2: Dê o play. A viagem começa
 Player apoio: Toda a nostalgia de uma época inesquecível, com a praticidade e a qualidade da transmissão digital.
 Player inativo: Pronto para ouvir
 Player conectando: Conectando...
@@ -47,18 +47,18 @@ Destaques:
 - DO BRASIL PARA O MUNDO — A Jovem Guarda em qualquer lugar.
 - OUÇA NO APP — Leve a rádio com você onde estiver.
 Conceito eyebrow: O ESPÍRITO DA JOVEM GUARDA
-Conceito H2: Um tempo que nunca sai de moda.
+Conceito H2: Um tempo que nunca sai de moda
 Conceito corpo: A energia, o romantismo e a alegria de uma época que marcou gerações. A A7 Jovem Guarda FM mantém essa atmosfera viva e presente em cada momento da sua programação.
-Alcance H2: Uma rádio sem fronteiras.
+Alcance H2: Uma rádio sem fronteiras
 Alcance corpo: Onde você estiver, a A7 Jovem Guarda FM está com você. Uma transmissão disponível 24 horas por dia, com áudio em alta definição para acompanhar a sua rotina.
 App eyebrow: NOSSO APLICATIVO
-App H2: Sua rádio favorita, sempre por perto.
+App H2: Sua rádio favorita, sempre por perto
 App corpo: Leve a atmosfera da Jovem Guarda com você. Acesse o aplicativo e continue ouvindo a A7 Jovem Guarda FM onde e quando quiser.
-App CTA: Acessar aplicativo
-Instagram H2: A nostalgia fica ainda melhor quando é compartilhada.
+App CTA: Baixar o Aplicativo
+Instagram H2: A nostalgia fica ainda melhor quando é compartilhada
 Instagram corpo: Acompanhe a A7 Jovem Guarda FM no Instagram e fique mais perto da rádio.
 Instagram CTA: Seguir no Instagram
-CTA final H2: A Rádio da sua Vida.
+CTA final H2: A Rádio da sua Vida
 CTA final apoio: Do Brasil para o Mundo. 24 horas no ar.
 CTA final botão: Ouvir agora
 Footer marca: A7 Jovem Guarda FM
@@ -139,3 +139,10 @@ Se houver divergência entre esta especificação e o arquivo existente, prioriz
 A branch `feat/v1-site` anterior é obsoleta. **Não usá-la como base.** A V1 deve partir da `main` atual (que contém as imagens e documentos). Para desenvolvimento, criar uma NOVA branch a partir da main, por exemplo `feat/site-v1`; manter a main intacta durante a implementação. Nenhum commit/push/PR/merge sem aprovação expressa do usuário.
 O stream confirmado é `https://s04.svrdedicado.org:7150/stream`. Usar player HTMLAudioElement nativo, sem polling/metadados, disco gira apenas durante evento real de reprodução.
 Não criar seções de Programação ou Contato sem dados confirmados, mesmo que apareçam em imagens de referência.
+
+
+## Ajustes finais aprovados
+
+Títulos h1/h2/h3 sem ponto final de encerramento; pontuação interna, parágrafos e slogans preservados. CTA do aplicativo: Baixar o Aplicativo, mantendo a URL confirmada. Copyright: © [ano dinâmico] A7 Jovem Guarda FM. Todos os direitos reservados., utilizando new Date().getFullYear(). Crédito existente preservado.
+
+Arquitetura da V1: Header, Hero, Player, Benefits, Concept, Reach, Application, Instagram, FinalCta e Footer em componentes individuais em src/components/sections/. App coordena o hook e compõe as seções. Tailwind concentra layout, dimensões, spacing, tipografia e responsividade; src/styles.css mantém tokens, fontes, resets e efeitos gráficos. O hook useRadio.tsx permanece sem alterações.
