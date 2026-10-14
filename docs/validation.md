@@ -142,3 +142,13 @@ URL oficial definida pelo usuário: https://www.a7jovemguardafm.com/. Esta defin
 - Artefatos de produção verificados: canonical único; OG/Twitter e JSON-LD com URLs absolutas HTTPS/www; sitemap com uma única URL; robots apontando ao sitemap correto; nenhum HTTP antigo, placeholder ou barra duplicada nas URLs do domínio geradas.
 - Nenhuma alteração de layout, imagens, copy visível ou player. Testes de reprodução e layout não foram repetidos nesta correção de metadados.
 - Escopo autorizado: commit, push e PR; merge depende de nova autorização.
+
+## Arimo local e validação Android/WebKit — 14/10/2026
+
+- Branch `codex/arimo-font`, criada da main atualizada. Arimo oficial Google Fonts sob SIL OFL, com WOFF2 estáticos 400 e 700 e `font-display: swap`. RadioName mantém `font-bold`; texto geral usa Arimo; Anton, Monoton e imagens preservados.
+- A variante variável inicial mostrou peso visual mais leve no WebKit apesar de `font-weight: 700` computado. Substituída por instâncias estáticas oficiais; capturas confirmaram o Bold na marca após a correção.
+- Build estático validado em Chrome com perfis Android Pixel 7 e Galaxy S9+, e WebKit com perfis desktop 1440px, iPhone 13 e iPhone SE. Nos perfis móveis, retrato e paisagem sem overflow horizontal.
+- Arimo 400/700 carregadas localmente com HTTP 200, fontes declaradas e carregadas no FontFaceSet, todas as menções via RadioName em peso 700. Anton e Monoton preservadas. Recursos externos bloqueados durante os testes; nenhuma requisição externa, erro de console ou âncora ausente.
+- Typecheck, lint e build passaram novamente após a troca para arquivos estáticos. Evidências locais em `qa-output/arimo/android-safari-report.json` e capturas da mesma pasta.
+- Limite: emulação de dispositivos e motor WebKit no Windows, sem Android físico ou Safari nativo em macOS/iOS. Não houve novo teste de reprodução do stream nesta validação tipográfica.
+- Nenhum commit, push ou merge realizado nesta alteração.

@@ -158,7 +158,7 @@ Estas regras substituem a copy e as decisões visuais anteriores nos pontos abai
 - Conceito: A A7 Jovem Guarda FM mantém essa emoção viva e presente em cada momento da sua programação. CTA: Dê o play nessa emoção.
 - Aplicativo: Leve a emoção da Jovem Guarda com você. Demais frases e CTA Baixar o Aplicativo preservados.
 - Alcance e encerramento: removidos os botões Ouvir agora, preservando textos e composições.
-- Todas as menções textuais ao nome usam Arial/Helvetica/sans-serif, a família original do footer, via RadioName. Imagens/logos permanecem intocados.
+- Todas as menções textuais ao nome usam Arimo Bold (700), hospedada localmente sob licença OFL, via RadioName. Texto geral e controles usam Arimo; Anton e Monoton permanecem preservadas. Imagens/logos permanecem intocados.
 - Player: base identificada como A7 JOVEM GUARDA FM, sem barra; ajuste para notebooks baixos, com rolagem natural e sem ocultar conteúdo funcional. NO AR é um indicador editorial da transmissão 24 horas, visível independentemente do estado local do áudio; Reproduzindo ao vivo e rotação continuam vinculados ao áudio real. Pulsação discreta, desativada com reduced motion.
 - Footer: grafite #171717, texto creme, logo original sobre apoio claro para legibilidade, plataformas sem filtros ou novos links. Copyright dinâmico e crédito preservados.
 - URL oficial corrigida: https://www.a7jovemguardafm.com/. Essa definição substitui a URL HTTP da etapa anterior; os relatos históricos de infraestrutura permanecem em docs/validation.md.

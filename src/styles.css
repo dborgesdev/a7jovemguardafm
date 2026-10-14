@@ -1,5 +1,19 @@
 @import "tailwindcss";
 @font-face {
+  font-family: Arimo;
+  src: url("/fonts/arimo-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Arimo;
+  src: url("/fonts/arimo-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
   font-family: Monoton;
   src: url("/fonts/monoton.woff2") format("woff2");
   font-weight: 400;
@@ -15,9 +29,10 @@
   --color-red: #c90806;
   --color-ink: #171717;
   --color-cream: #f5eedf;
-  --font-display: Anton, Impact, "Arial Narrow", sans-serif;
+  --font-display: Anton, Impact, sans-serif;
   --font-lettering: Monoton, Impact, sans-serif;
-  --font-brand: Arial, Helvetica, sans-serif;
+  --font-sans: Arimo, sans-serif;
+  --font-brand: Arimo, sans-serif;
 }
 @custom-variant notebook (@media (min-width: 48rem) and (max-height: 50rem));
 @layer base {
@@ -25,7 +40,7 @@
     --paper: #f5eedf;
     --red: #d10a06;
     --header-height: 100px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-sans);
     color: #171717;
     background: var(--paper);
     font-synthesis: none;
