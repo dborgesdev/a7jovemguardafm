@@ -37,15 +37,15 @@ const platforms = [
 
 export function Footer() {
   return (
-    <footer className="w-full border-t-[5px] border-ink bg-ink px-[max(48px,calc((100%-1280px)/2))] text-cream max-md:px-5 [&_a]:transition-colors [&_a:hover]:text-white [&_a:focus-visible]:outline-cream!">
-      <div className="flex flex-wrap items-center gap-6.5 py-8.75 max-md:gap-4.25">
+    <footer className="w-full border-t-[5px] border-red bg-cream text-ink px-[max(48px,calc((100%_-_1280px)/2))] max-md:px-5 [&_a]:transition-colors [&_a:hover]:text-red [&_a:focus-visible]:outline-ink!">
+      <div className="flex flex-wrap items-center gap-[26px] py-[35px] max-md:gap-[17px]">
         <a href="#inicio" className="shrink-0 rounded-lg bg-cream p-2">
           <img
             src={asset("logo-original-transparent.png")}
             width="315"
             height="308"
             alt="A7 Jovem Guarda FM"
-            className="w-20.25 max-md:w-16.25"
+            className="w-[81px] max-md:w-[65px]"
           />
         </a>
         <div className="min-w-0 flex-1 text-[15px] leading-[1.9] max-md:text-xs">
@@ -71,13 +71,13 @@ export function Footer() {
                 alt={`Logotipo ${name}`}
                 width={width}
                 height={height}
-                className={`${size} object-contain max-md:max-w-12.5 max-md:h-9`}
+                className={`${size} object-contain max-md:max-w-[50px] max-md:h-9`}
               />
             ))}
           </div>
         </div>
       </div>
-      <div className="flex justify-between gap-5 border-t border-cream/20 py-5.75 text-[13px] text-cream/90 max-md:flex-col max-md:gap-3 max-md:text-xs">
+      <div className="flex justify-between gap-5 border-t border-ink/15 py-5.75 text-[13px] text-ink/80 max-md:flex-col max-md:gap-3 max-md:text-xs">
         <span>
           © {new Date().getFullYear()} <RadioName />. Todos os direitos
           reservados.
@@ -85,7 +85,7 @@ export function Footer() {
         <a
           href={radio.credit}
           {...externalLink}
-          className="flex items-center gap-1.25"
+          className="flex items-center gap-[5px]"
         >
           Desenvolvido por Douglas Borges - Smart Local{" "}
           <ArrowUpRight size={13} aria-hidden="true" />
