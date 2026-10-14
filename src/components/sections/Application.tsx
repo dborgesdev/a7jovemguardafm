@@ -3,6 +3,7 @@ import { radio } from '../../config/radio';
 import { externalLink } from '../../config/links';
 import { visuals } from '../../config/visuals';
 import { styles } from '../styles';
+import { RadioName } from '../RadioName';
 
 export function Application() {
   return (
@@ -13,7 +14,7 @@ export function Application() {
         <div className={`${styles.panelCopy} !w-[45%] ml-auto max-md:!w-full`}>
           <p className={`${styles.eyebrow} text-red`}>NOSSO APLICATIVO</p>
           <h2 className={`${styles.heading} ${styles.panelHeading}`}>Sua rádio favorita,<br /><span className="text-red">sempre por perto</span></h2>
-          <p className={styles.body}>Leve a atmosfera da Jovem Guarda com você. Acesse o aplicativo e continue ouvindo a A7 Jovem Guarda FM onde e quando quiser.</p>
+          <p className={styles.body}>Leve a emoção da Jovem Guarda com você. Acesse o aplicativo e continue ouvindo a <RadioName /> onde e quando quiser.</p>
           <a href={radio.app} {...externalLink} className={`${styles.button} ${styles.redButton}`}><Smartphone size={19} aria-hidden="true" />Baixar o Aplicativo <ArrowUpRight size={17} aria-hidden="true" /></a>
         </div>
       </div>

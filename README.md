@@ -28,7 +28,7 @@ Um único elemento HTMLAudioElement, com preload none e sem autoplay, polling ou
 
 ## SEO
 
-Título, descrição, OG/Twitter, favicon, robots e JSON-LD com dados confirmados. O domínio oficial ainda precisa ser informado. Após confirmação, configure `SITE_URL=https://dominio-oficial` no ambiente de build: o script gera canonical, og:url, URLs absolutas das imagens e sitemap.xml. Sem SITE_URL nenhum domínio é inventado; canonical e sitemap são omitidos.
+Domínio confirmado: `http://www.a7jovemguardafm.com/`, centralizado em `src/config/site.json`. O Vite gera canonical, og:url, imagens OG/Twitter absolutas e JSON-LD; o build gera sitemap.xml e robots.txt com referência ao sitemap. Em 14/10/2026, HTTP e HTTPS falharam por DNS (ENOTFOUND; consulta pública confirmou NXDOMAIN). DNS, SSL e redirecionamento canônico ainda precisam ser configurados/verificados. A URL permanece em HTTP conforme informado pelo cliente; após confirmação de HTTPS, atualize somente site.json. Nenhum domínio alternativo ou SSL presumido.
 
 ## Assets
 

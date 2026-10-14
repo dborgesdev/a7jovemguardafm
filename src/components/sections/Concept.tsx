@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { visuals } from '../../config/visuals';
 import { styles } from '../styles';
+import { RadioName } from '../RadioName';
 
 export function Concept() {
   return (
@@ -11,8 +12,8 @@ export function Concept() {
         <div className={`${styles.panelCopy} ml-auto`}>
           <p className={`${styles.eyebrow} text-red`}>O ESPÍRITO DA JOVEM GUARDA</p>
           <h2 className={`${styles.heading} ${styles.panelHeading}`}>Um tempo que<br /><span className="text-red">nunca sai de moda</span></h2>
-          <p className={styles.body}>A energia, o romantismo e a alegria de uma época que marcou gerações. A A7 Jovem Guarda FM mantém essa atmosfera viva e presente em cada momento da sua programação.</p>
-          <a href="#ao-vivo" className="inline-flex items-center gap-3 border-b-2 border-[#ae0805] py-3 text-[15px] font-bold text-[#ae0805]">Dê o play nessa atmosfera <ArrowUpRight size={19} aria-hidden="true" /></a>
+          <p className={styles.body}>A energia, o romantismo e a alegria de uma época que marcou gerações. A <RadioName /> mantém essa emoção viva e presente em cada momento da sua programação.</p>
+          <a href="#ao-vivo" className="inline-flex items-center gap-3 border-b-2 border-[#ae0805] py-3 text-[15px] font-bold text-[#ae0805]">Dê o play nessa emoção <ArrowUpRight size={19} aria-hidden="true" /></a>
         </div>
       </div>
     </section>

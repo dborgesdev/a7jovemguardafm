@@ -28,14 +28,14 @@ export default function App() {
       {player.audioElement}
       <Header onListen={listen} menuOpen={menuOpen} onToggleMenu={() => setMenuOpen(!menuOpen)} onCloseMenu={() => setMenuOpen(false)} />
       <main id="conteudo">
-        <Hero onListen={listen} />
+        <Hero />
         <Player state={player.state} volume={player.volume} toggle={player.toggle} changeVolume={player.changeVolume} />
         <Benefits />
         <Concept />
-        <Reach onListen={listen} />
+        <Reach />
         <Application />
         <Instagram />
-        <FinalCta onListen={listen} />
+        <FinalCta />
       </main>
       <Footer />
     </>
