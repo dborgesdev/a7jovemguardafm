@@ -5,6 +5,7 @@ import type { useRadio, AudioState } from '../useRadio';
 import { Tonearm } from '../Tonearm';
 import { styles } from '../styles';
 import { RadioName } from '../RadioName';
+import { AudioLevelMeter } from '../AudioLevelMeter';
 
 type PlayerProps = Pick<ReturnType<typeof useRadio>, 'state' | 'volume' | 'toggle' | 'changeVolume'>;
 const statusText: Record<AudioState, string> = {
@@ -23,7 +24,7 @@ export function Player({ state, volume, toggle, changeVolume }: PlayerProps) {
           <img src={asset('vinyl-player.webp')} width="962" height="941" className={`vinyl aspect-square w-full rounded-full object-contain ${state === 'playing' ? 'is-playing' : ''}`} alt="" />
           <Tonearm />
           <div className="absolute right-[22px] bottom-[17px] left-[25px] flex items-center gap-[19px]">
-            <span className="deck-grille mr-auto h-[30px] w-[38%] rounded-[5px] border-[3px] border-[#c4b89d]" />
+            <AudioLevelMeter active={state === 'playing'} />
             <span className="deck-knob size-[31px] rounded-full border-[3px] border-[#958465]" />
             <span className="deck-knob size-[22px] rounded-full border-[3px] border-[#958465]" />
           </div>

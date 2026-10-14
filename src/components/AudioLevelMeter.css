@@ -1,0 +1,56 @@
+.audio-level-meter {
+  display: flex;
+  flex-shrink: 0;
+  gap: 3%;
+  padding: 2px 4px;
+  overflow: hidden;
+  background: linear-gradient(#151713, #252620);
+  box-shadow: inset 0 2px 3px #000b, 0 1px 0 #f4ecd8;
+  /* The whole instrument inherits the deck's transform and perspective. */
+}
+
+.audio-level-meter__column {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #34372c;
+  box-shadow: inset 1px 0 #0008;
+}
+
+.audio-level-meter__lights {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #75a53c 0 35%, #d8c847 35% 60%, #dc8a30 60% 80%, #cf3d27 80%);
+  clip-path: inset(85% 0 0);
+  opacity: .35;
+}
+
+.audio-level-meter__column::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to top, transparent 0 2px, #171914 2px 3px);
+  box-shadow: inset 0 0 1px #000;
+}
+
+.audio-level-meter[data-active='true'] .audio-level-meter__lights {
+  opacity: 1;
+  animation: deck-level var(--meter-duration) steps(5, end) var(--meter-delay) infinite;
+}
+
+@keyframes deck-level {
+  0%, 100% { clip-path: inset(70% 0 0); }
+  18% { clip-path: inset(var(--meter-peak) 0 0); }
+  42% { clip-path: inset(48% 0 0); }
+  63% { clip-path: inset(22% 0 0); }
+  81% { clip-path: inset(58% 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .audio-level-meter[data-active='true'] .audio-level-meter__lights {
+    animation: none;
+    clip-path: inset(48% 0 0);
+  }
+}
