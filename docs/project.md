@@ -5,6 +5,7 @@ Referência de experiência: https://github.com/dborgesdev/geracaovinilfm (inspe
 
 ## Fatos confirmados
 Nome: A7 Jovem Guarda FM.
+Domínio oficial informado em 14/10/2026: http://www.a7jovemguardafm.com/ (infraestrutura DNS/HTTPS pendente de verificação após configuração).
 Slogan exato: A Rádio da sua Vida.
 Frase exata: Do Brasil para o Mundo.
 24 horas no ar; transmissão anunciada como alta definição (não inventar bitrate).
@@ -105,12 +106,12 @@ Responsivo: validar 320/375/768/1024/1440; mobile prioriza play e legibilidade.
 Título provisório: A7 Jovem Guarda FM | A Rádio da sua Vida
 Descrição: Ouça a A7 Jovem Guarda FM ao vivo, 24 horas por dia, com transmissão em alta definição. A Rádio da sua Vida, do Brasil para o Mundo.
 OG, Twitter, favicon, robots, sitemap e JSON-LD RadioStation somente com fatos verificáveis.
-Canonical e sitemap aguardam domínio oficial; não usar endereço fictício.
+Canonical, sitemap, robots, OG/Twitter e JSON-LD usam o domínio oficial centralizado em src/config/site.json. HTTP preservado até confirmação de HTTPS/redirecionamento; DNS atualmente retorna NXDOMAIN.
 Vercel static hosting preferencial; `pnpm build`, saída `dist`; sem servidor customizado ou secrets por padrão. SPA âncoras, sem rewrite desnecessário.
 
 ## Pendências
 STREAM DIRETO FORNECIDO: https://s04.svrdedicado.org:7150/stream. Validar reprodução no navegador na V1.
-BLOQUEANTE PARA PUBLICAÇÃO SEO: domínio final/canonical.
+PENDENTE PARA PUBLICAÇÃO NO DOMÍNIO: configurar DNS/hosting e verificar HTTPS e redirecionamento canônico. A geração dos arquivos de SEO com a URL informada está preparada.
 DECISÃO: não consultar metadados; nenhum endpoint de metadata é necessário.
 NÃO BLOQUEANTE: arte final de conceito, alcance, OG e extração transparente da marca.
 NÃO CONFIRMADOS: WhatsApp, e-mail, telefone, programação, cidade/sede, artistas, playlists, bitrate.
@@ -146,3 +147,18 @@ Não criar seções de Programação ou Contato sem dados confirmados, mesmo que
 Títulos h1/h2/h3 sem ponto final de encerramento; pontuação interna, parágrafos e slogans preservados. CTA do aplicativo: Baixar o Aplicativo, mantendo a URL confirmada. Copyright: © [ano dinâmico] A7 Jovem Guarda FM. Todos os direitos reservados., utilizando new Date().getFullYear(). Crédito existente preservado.
 
 Arquitetura da V1: Header, Hero, Player, Benefits, Concept, Reach, Application, Instagram, FinalCta e Footer em componentes individuais em src/components/sections/. App coordena o hook e compõe as seções. Tailwind concentra layout, dimensões, spacing, tipografia e responsividade; src/styles.css mantém tokens, fontes, resets e efeitos gráficos. O hook useRadio.tsx permanece sem alterações.
+
+
+## Alterações do cliente — 14/10/2026
+
+Estas regras substituem a copy e as decisões visuais anteriores nos pontos abaixo; os registros históricos permanecem preservados.
+
+- Header: sombra vermelha discreta apenas após rolagem; único botão Ouvir agora da homepage. Controles nativos do player continuam disponíveis.
+- Hero: Reviva a emoção da Jovem Guarda em uma experiência que atravessa gerações. Demais frases e CTA Conheça a rádio preservados; botão Ouvir agora removido.
+- Conceito: A A7 Jovem Guarda FM mantém essa emoção viva e presente em cada momento da sua programação. CTA: Dê o play nessa emoção.
+- Aplicativo: Leve a emoção da Jovem Guarda com você. Demais frases e CTA Baixar o Aplicativo preservados.
+- Alcance e encerramento: removidos os botões Ouvir agora, preservando textos e composições.
+- Todas as menções textuais ao nome usam Arial/Helvetica/sans-serif, a família original do footer, via RadioName. Imagens/logos permanecem intocados.
+- Player: base identificada como A7 JOVEM GUARDA FM, sem barra; ajuste para notebooks baixos, com rolagem natural e sem ocultar conteúdo funcional. NO AR é um indicador editorial da transmissão 24 horas, visível independentemente do estado local do áudio; Reproduzindo ao vivo e rotação continuam vinculados ao áudio real. Pulsação discreta, desativada com reduced motion.
+- Footer: grafite #171717, texto creme, logo original sobre apoio claro para legibilidade, plataformas sem filtros ou novos links. Copyright dinâmico e crédito preservados.
+- Domínio confirmado: http://www.a7jovemguardafm.com/. HTTP/HTTPS falharam por DNS; consulta pública retornou NXDOMAIN. Não presumir certificado ou URL HTTPS.

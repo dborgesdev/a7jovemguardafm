@@ -7,7 +7,9 @@
   --color-cream: #f5eedf;
   --font-display: Anton, Impact, 'Arial Narrow', sans-serif;
   --font-lettering: Monoton, Impact, sans-serif;
+  --font-brand: Arial, Helvetica, sans-serif;
 }
+@custom-variant notebook (@media (min-width: 48rem) and (max-height: 50rem));
 @layer base {
 :root { --paper: #f5eedf; --red: #d10a06; --header-height: 100px; font-family: Arial, Helvetica, sans-serif; color: #171717; background: var(--paper); font-synthesis: none; }
 * { box-sizing: border-box; }
@@ -29,7 +31,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .hero::before { content: ''; position: absolute; inset: 0; z-index: 0; background: linear-gradient(90deg, #faf0dcf2 0%, #faf0dcd9 28%, #faf0dc7a 43%, transparent 62%); }
 .hero-stripes { position: absolute; inset: auto -10% 0 47%; height: 22px; transform: skewX(-28deg); background: repeating-linear-gradient(90deg, var(--red) 0 50px, var(--paper) 50px 65px, #171717 65px 80px, var(--paper) 80px 95px); }
 /* Mechanical shading and animation; layout is in the Player component. */
-.player-section::before { content: ''; position: absolute; width: 760px; height: 760px; left: -340px; top: -130px; border: 90px solid #e3d6be; border-radius: 50%; z-index: -1; }
+.player-backdrop::before { content: ''; position: absolute; width: 760px; height: 760px; left: -340px; top: -130px; border: 90px solid #e3d6be; border-radius: 50%; }
 .disc-stage { background: linear-gradient(125deg, #e6decd, #fbf5e7 40%, #cabfa9); box-shadow: 0 12px 0 #810c0a, 0 27px 36px #4a251526, inset 0 0 0 2px #fff7dd; }
 .vinyl { animation: spin 14s linear infinite; animation-play-state: paused; filter: drop-shadow(0 9px 4px #0005); }
 .vinyl.is-playing { animation-play-state: running; }
@@ -40,6 +42,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .player-controls::before, .player-controls::after { content: ''; position: absolute; top: 9px; width: 5px; height: 5px; border: 1px solid #7b705e; border-radius: 50%; background: #b8af9f; }
 .player-controls::before { left: 9px; }.player-controls::after { right: 9px; }
 .play-control { box-shadow: 0 4px 0 #a30906; }
+.on-air-dot { animation: broadcast-pulse 2.4s ease-in-out infinite; }
+@keyframes broadcast-pulse { 0%, 100% { opacity: .65; box-shadow: 0 0 0 0 #c9080600; } 50% { opacity: 1; box-shadow: 0 0 0 4px #c908061a; } }
 .features::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(120deg, transparent 0 140px, #b50b08 140px 160px, transparent 160px 270px); z-index: -1; }
 .features-band { box-shadow: 0 9px 0 #a50b08; }
 /* Masks and geometry join the replaceable images to each full-width panel. */

@@ -90,3 +90,43 @@ Pendências aceitas para esta integração, sem bloquear o build estático: dom�
 Footer final: quatro logotipos informativos, com proporções preservadas, alt descritivo, sem filtros ou links não confirmados. Validado no build em 320, 375, 768 e 1440 px; imagens carregadas e sem overflow.
 
 CI em .github/workflows/ci.yml: instalação com lockfile, typecheck, lint, build e verificação de HTML, robots, imagens e fontes no dist. Executa em pull requests e pushes da main/feat/site-v1.
+
+## Alterações do cliente — 14/10/2026
+
+Implementadas localmente em feat/site-v1. A main atual contém o mesmo código da V1 e um workflow de sincronização posterior; esse workflow foi preservado com conteúdo idêntico ao blob da main (3c95d5dd0861cbcc32e6f953c22905e3093c7af0), sem execução, commit, push, PR ou merge.
+
+### Implementação
+
+- Header: IntersectionObserver sobre marcador do topo, com disconnect no cleanup; sem listener contínuo de scroll. Sombra rgba(209,10,6,0.25) apenas depois de rolar, com transição e reduced motion.
+- Base do player: A7 JOVEM GUARDA FM, sem barra. Conjunto reduzido por viewport em telas de ao menos 768 px de largura e até 800 px de altura; controles e textos acompanham a redução. A seção mantém overflow visible. Apenas o backdrop decorativo usa recorte, sem mascarar conteúdo funcional.
+- NO AR: indicador editorial separado do status local do áudio, com pulsação CSS discreta. Visível mesmo pausado; não representa uma simulação de reprodução. Preferência reduced motion desativa a pulsação.
+- RadioName: mesma família Arial/Helvetica/sans-serif original do footer em nove menções textuais, inclusive player e base. Títulos e textos de imagens intactos.
+- Footer: grafite #171717, textos creme, foco e divisória ajustados. Logo original sobre apoio creme para manter contraste; imagens das quatro plataformas sem filtros ou links novos.
+- Conteúdo visível: emoção substitui atmosfera; exatamente um botão Ouvir agora, dentro do header. Controles próprios do player e demais CTAs preservados.
+- URL oficial centralizada em src/config/site.json. Vite preenche canonical, og:url, OG/Twitter absolutos e JSON-LD. Build gera sitemap.xml e robots.txt apontando ao sitemap. HTTP preservado conforme informado, sem adotar HTTPS presumido.
+
+### Verificações executadas
+
+- pnpm typecheck, pnpm lint e pnpm build: passaram. Build dist servido com Vite preview e arquivos de SEO inspecionados.
+- Chrome: 320×800, 375×812, 768×900, 1024×900, 1440×900, 1366×768, 1280×720 e 1366×600. Sem overflow horizontal, imagens quebradas, âncoras inválidas ou erros de console.
+- Notebooks: disco, controles, botão e volume completamente abaixo do header e dentro da viewport após navegar à seção. Hit testing confirmou acesso ao botão e volume. Em 1366×600, a base termina em aproximadamente 562 px e o painel em 550 px; ambos cabem na altura disponível. Conteúdo maior em mobile continua acessível por rolagem natural.
+- Header: estado false no topo, true após scroll; sombra transparente no topo e sombra vermelha após transição. IntersectionObserver mantém limpeza explícita.
+- Nove nomes renderizados: família computada igual à do footer em todas as resoluções. Identificação da base sem barra, ausência de atmosfera no innerText e único CTA Ouvir agora no header confirmados.
+- Rodapé desktop/mobile revisado visualmente; fundo computado rgb(23,23,23), quatro plataformas carregadas, filtro none, logo principal legível.
+- Player real por clique no header: waiting → playing, readyState 4, currentTime avançando (1,40 s na captura), sem erro. Disco running e braço transform none. Pausa real muda rotação para paused. Volume 35% refletido no elemento; teclado incrementou 70% para 71%.
+- Reduced motion: animações do indicador e do vinil ficam none.
+- Menu móvel abre/navega/fecha, skip link por teclado chega a #conteudo. Aplicativo, Instagram e Smart Local responderam HTTP 200.
+- SEO de produção: canonical e og:url = http://www.a7jovemguardafm.com/; OG/Twitter = http://www.a7jovemguardafm.com/assets/og-image.webp; JSON-LD com URL/logo do domínio informado e fatos confirmados; sitemap/robots coerentes. Nenhum placeholder de URL no HTML final.
+- Hashes de todos os assets originais e das cópias em public/assets/: inalterados. Hash do hook useRadio.tsx também inalterado. Sem novas bibliotecas ou consulta de metadados.
+
+### Pendências reais
+
+HTTP e HTTPS do domínio informado falharam com ENOTFOUND. Consulta pública ao DNS Google retornou status 3 (NXDOMAIN) tanto para www.a7jovemguardafm.com quanto para a7jovemguardafm.com. Por isso, certificado HTTPS e redirecionamento canônico não puderam ser verificados. Configurar DNS/hosting e depois verificar SSL/redirecionamento; a URL usada permanece exatamente a fornecida pelo cliente.
+
+Safari/iOS e dispositivos físicos continuam sem validação nesta etapa. Não foi executado deploy nem qualquer operação de publicação Git.
+
+## Publicação das alterações do cliente autorizada
+
+O usuário autorizou commit, push, PR, CI e merge na main após avaliar os ajustes acima. As anotações anteriores de ausência de publicação descrevem a etapa de implementação local.
+
+DNS/hosting do domínio informado, confirmação de HTTPS/redirecionamento e Safari/iOS continuam documentados como pendências. A integração preserva o workflow de sincronização já existente na main e acrescenta a conferência do sitemap ao CI de produção.

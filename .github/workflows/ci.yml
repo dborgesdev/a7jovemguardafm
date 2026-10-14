@@ -33,6 +33,7 @@ jobs:
         run: |
           test -s dist/index.html
           test -s dist/robots.txt
+          test -s dist/sitemap.xml
           for asset in hero-bg.webp vinyl-player.webp concept-radio.webp reach-vinyl.webp app-mockup.webp logo-original-transparent.png favicon.png og-image.webp mytuner.webp radiobox.webp radiosnet.webp cluberadios.webp; do
             test -s "dist/assets/$asset"
           done
