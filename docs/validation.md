@@ -130,3 +130,16 @@ Safari/iOS e dispositivos físicos continuam sem validação nesta etapa. Não f
 O usuário autorizou commit, push, PR, CI e merge na main após avaliar os ajustes acima. As anotações anteriores de ausência de publicação descrevem a etapa de implementação local.
 
 DNS/hosting do domínio informado, confirmação de HTTPS/redirecionamento e Safari/iOS continuam documentados como pendências. A integração preserva o workflow de sincronização já existente na main e acrescenta a conferência do sitemap ao CI de produção.
+
+## Correção da URL canônica para HTTPS e www — 14/10/2026
+
+URL oficial definida pelo usuário: https://www.a7jovemguardafm.com/. Esta definição substitui a configuração HTTP da etapa anterior. Os registros de HTTP/DNS acima são históricos; não houve nova verificação de disponibilidade do domínio nesta correção.
+
+- Branch codex/fix-site-url criada da main atual e535526.
+- src/config/site.json atualizado; canonical, og:url, OG/Twitter absolutos, JSON-LD, sitemap e robots continuam derivados da única configuração.
+- Gerador de SEO valida HTTPS, www e URL raiz, sem porta, credenciais, query ou fragmento.
+- Typecheck, lint e build: passaram.
+- Artefatos de produção verificados: canonical único; OG/Twitter e JSON-LD com URLs absolutas HTTPS/www; sitemap com uma única URL; robots apontando ao sitemap correto; nenhum HTTP antigo, placeholder ou barra duplicada nas URLs do domínio geradas.
+- Nenhuma alteração de layout, imagens, copy visível ou player. Testes de reprodução e layout não foram repetidos nesta correção de metadados.
+- Escopo autorizado: commit, push e PR; merge depende de nova autorização.
+

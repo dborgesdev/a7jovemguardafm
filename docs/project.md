@@ -5,7 +5,7 @@ Referência de experiência: https://github.com/dborgesdev/geracaovinilfm (inspe
 
 ## Fatos confirmados
 Nome: A7 Jovem Guarda FM.
-Domínio oficial informado em 14/10/2026: http://www.a7jovemguardafm.com/ (infraestrutura DNS/HTTPS pendente de verificação após configuração).
+URL oficial corrigida pelo usuário em 14/10/2026: https://www.a7jovemguardafm.com/.
 Slogan exato: A Rádio da sua Vida.
 Frase exata: Do Brasil para o Mundo.
 24 horas no ar; transmissão anunciada como alta definição (não inventar bitrate).
@@ -106,12 +106,12 @@ Responsivo: validar 320/375/768/1024/1440; mobile prioriza play e legibilidade.
 Título provisório: A7 Jovem Guarda FM | A Rádio da sua Vida
 Descrição: Ouça a A7 Jovem Guarda FM ao vivo, 24 horas por dia, com transmissão em alta definição. A Rádio da sua Vida, do Brasil para o Mundo.
 OG, Twitter, favicon, robots, sitemap e JSON-LD RadioStation somente com fatos verificáveis.
-Canonical, sitemap, robots, OG/Twitter e JSON-LD usam o domínio oficial centralizado em src/config/site.json. HTTP preservado até confirmação de HTTPS/redirecionamento; DNS atualmente retorna NXDOMAIN.
+Canonical, sitemap, robots, OG/Twitter e JSON-LD usam o domínio oficial centralizado em src/config/site.json. URL canônica: https://www.a7jovemguardafm.com/, com HTTPS e www.
 Vercel static hosting preferencial; `pnpm build`, saída `dist`; sem servidor customizado ou secrets por padrão. SPA âncoras, sem rewrite desnecessário.
 
 ## Pendências
 STREAM DIRETO FORNECIDO: https://s04.svrdedicado.org:7150/stream. Validar reprodução no navegador na V1.
-PENDENTE PARA PUBLICAÇÃO NO DOMÍNIO: configurar DNS/hosting e verificar HTTPS e redirecionamento canônico. A geração dos arquivos de SEO com a URL informada está preparada.
+URL oficial configurada com HTTPS e www. Os registros anteriores de DNS são históricos e não representam uma verificação atual de infraestrutura.
 DECISÃO: não consultar metadados; nenhum endpoint de metadata é necessário.
 NÃO BLOQUEANTE: arte final de conceito, alcance, OG e extração transparente da marca.
 NÃO CONFIRMADOS: WhatsApp, e-mail, telefone, programação, cidade/sede, artistas, playlists, bitrate.
@@ -161,4 +161,4 @@ Estas regras substituem a copy e as decisões visuais anteriores nos pontos abai
 - Todas as menções textuais ao nome usam Arial/Helvetica/sans-serif, a família original do footer, via RadioName. Imagens/logos permanecem intocados.
 - Player: base identificada como A7 JOVEM GUARDA FM, sem barra; ajuste para notebooks baixos, com rolagem natural e sem ocultar conteúdo funcional. NO AR é um indicador editorial da transmissão 24 horas, visível independentemente do estado local do áudio; Reproduzindo ao vivo e rotação continuam vinculados ao áudio real. Pulsação discreta, desativada com reduced motion.
 - Footer: grafite #171717, texto creme, logo original sobre apoio claro para legibilidade, plataformas sem filtros ou novos links. Copyright dinâmico e crédito preservados.
-- Domínio confirmado: http://www.a7jovemguardafm.com/. HTTP/HTTPS falharam por DNS; consulta pública retornou NXDOMAIN. Não presumir certificado ou URL HTTPS.
+- URL oficial corrigida: https://www.a7jovemguardafm.com/. Essa definição substitui a URL HTTP da etapa anterior; os relatos históricos de infraestrutura permanecem em docs/validation.md.

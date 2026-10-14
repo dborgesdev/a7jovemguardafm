@@ -28,7 +28,7 @@ Um único elemento HTMLAudioElement, com preload none e sem autoplay, polling ou
 
 ## SEO
 
-Domínio confirmado: `http://www.a7jovemguardafm.com/`, centralizado em `src/config/site.json`. O Vite gera canonical, og:url, imagens OG/Twitter absolutas e JSON-LD; o build gera sitemap.xml e robots.txt com referência ao sitemap. Em 14/10/2026, HTTP e HTTPS falharam por DNS (ENOTFOUND; consulta pública confirmou NXDOMAIN). DNS, SSL e redirecionamento canônico ainda precisam ser configurados/verificados. A URL permanece em HTTP conforme informado pelo cliente; após confirmação de HTTPS, atualize somente site.json. Nenhum domínio alternativo ou SSL presumido.
+URL oficial: `https://www.a7jovemguardafm.com/`, centralizada em `src/config/site.json`. O Vite gera canonical, og:url, imagens OG/Twitter absolutas e JSON-LD; o build gera sitemap.xml e robots.txt com referência ao sitemap. Todos usam HTTPS, www e uma única barra de junção. O script de SEO valida uma URL raiz HTTPS com www; não há cópias independentes da URL nas tags.
 
 ## Assets
 

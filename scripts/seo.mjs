@@ -1,10 +1,10 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
-// Keep the confirmed HTTP URL until HTTPS and canonical redirects are verified.
+// All SEO URLs come from the official HTTPS root configured in site.json.
 const site = JSON.parse(await readFile(new URL('../src/config/site.json', import.meta.url), 'utf8'));
 const url = new URL(site.url);
-if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password || url.search || url.hash) {
-  throw new Error('Official site URL must be HTTP(S) without credentials, query or fragment.');
+if (url.protocol !== 'https:' || !url.hostname.startsWith('www.') || url.pathname !== '/' || url.port || url.username || url.password || url.search || url.hash) {
+  throw new Error('Official site URL must be an HTTPS www root URL without port, credentials, query or fragment.');
 }
 const base = url.href;
 const html = await readFile('dist/index.html', 'utf8');
