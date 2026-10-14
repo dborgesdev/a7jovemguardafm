@@ -142,4 +142,3 @@ URL oficial definida pelo usuário: https://www.a7jovemguardafm.com/. Esta defin
 - Artefatos de produção verificados: canonical único; OG/Twitter e JSON-LD com URLs absolutas HTTPS/www; sitemap com uma única URL; robots apontando ao sitemap correto; nenhum HTTP antigo, placeholder ou barra duplicada nas URLs do domínio geradas.
 - Nenhuma alteração de layout, imagens, copy visível ou player. Testes de reprodução e layout não foram repetidos nesta correção de metadados.
 - Escopo autorizado: commit, push e PR; merge depende de nova autorização.
-
