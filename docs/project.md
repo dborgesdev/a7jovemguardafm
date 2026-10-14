@@ -117,3 +117,25 @@ NÃO CONFIRMADOS: WhatsApp, e-mail, telefone, programação, cidade/sede, artist
 
 ## Aceite V1
 Landing completa e visualmente avaliável; assets individuais; marca fiel; site claro e temático; CTA toca stream real após clique; disco sincronizado com playback real; app e Instagram abrem URLs confirmadas; crédito correto; SEO sem dados fictícios; build e responsividade validados; sem commit/push/merge antes de autorização.
+
+
+## Inventário real de assets na main — obrigatório
+A pasta `assets/` JÁ existe no repositório e foi fornecida pelo usuário. Ela é a fonte de verdade dos arquivos de imagem. **Não alterar, sobrescrever, excluir, renomear ou regenerar nenhum asset existente.** É permitido copiá-los, sem modificar os originais, para `public/assets/` na implementação. Não utilizar imagens remotas aleatórias nem placeholders. Não usar mockup conceitual inteiro como background.
+- `assets/hero-bg.webp`: background final do hero, sem textos; títulos, botões e logo devem ser HTML/componentes sobre a imagem.
+- `assets/hero-visual-reference.png`: referência de composição do hero; não renderizar como imagem de fundo.
+- `assets/concept-radio.webp`: imagem para seção conceito.
+- `assets/reach-vinyl.webp`: composição de vinil para seção alcance, se presente; conferir arquivo exato antes de referenciar.
+- `assets/app-mockup.webp`: imagem da seção aplicativo; `assets/app-reference.webp` e `assets/app-screenshot-original.webp` são referências reais.
+- `assets/vinyl-player.png`: disco para animação no player; usar imagem existente, nunca gerar outro. Se o arquivo estiver ausente, sinalizar.
+- `assets/logo-original-transparent.png`: logo fornecido; conferir fundo e legibilidade, sem redesenhar.
+- `assets/favicon.png`: favicon fornecido.
+- `assets/og-image.webp`: imagem OG fornecida.
+- `assets/brand-reference.webp` e `assets/brand-cover.webp`: referências da marca.
+- `assets/visual-direction.webp`, se existir: referência conceitual, nunca renderizar como uma imagem de página inteira.
+Outros arquivos presentes em `assets/` devem ser preservados. Inspecionar a listagem real da pasta antes de importar. Não declarar arquivo ausente sem verificar.
+Se houver divergência entre esta especificação e o arquivo existente, priorizar o arquivo REAL da main e reportar a divergência, sem substituição.
+
+## Orientação operacional atualizada
+A branch `feat/v1-site` anterior é obsoleta. **Não usá-la como base.** A V1 deve partir da `main` atual (que contém as imagens e documentos). Para desenvolvimento, criar uma NOVA branch a partir da main, por exemplo `feat/site-v1`; manter a main intacta durante a implementação. Nenhum commit/push/PR/merge sem aprovação expressa do usuário.
+O stream confirmado é `https://s04.svrdedicado.org:7150/stream`. Usar player HTMLAudioElement nativo, sem polling/metadados, disco gira apenas durante evento real de reprodução.
+Não criar seções de Programação ou Contato sem dados confirmados, mesmo que apareçam em imagens de referência.
