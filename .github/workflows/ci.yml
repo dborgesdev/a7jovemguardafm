@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, feat/site-v1]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  production:
+    name: Typecheck, lint and production build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm build
+      - name: Verify static output
+        run: |
+          test -s dist/index.html
+          test -s dist/robots.txt
+          for asset in hero-bg.webp vinyl-player.webp concept-radio.webp reach-vinyl.webp app-mockup.webp logo-original-transparent.png favicon.png og-image.webp mytuner.webp radiobox.webp radiosnet.webp cluberadios.webp; do
+            test -s "dist/assets/$asset"
+          done
+          test -s dist/fonts/anton.woff2
+          test -s dist/fonts/monoton.woff2
