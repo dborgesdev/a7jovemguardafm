@@ -44,7 +44,7 @@ export function Header({
         >
           <a href="#inicio" aria-label="A7 Jovem Guarda FM — Início">
             <img
-              src={asset("logo-original-transparent.png")}
+              src={asset("logo-original-transparent.webp")}
               width="315"
               height="308"
               alt="A7 Jovem Guarda FM"
